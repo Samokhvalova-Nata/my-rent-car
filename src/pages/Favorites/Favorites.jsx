@@ -1,6 +1,10 @@
+import { Title } from "../Home/Home.styled";
+
 const Favorites = () => {
     return (
-        <title>Favorites</title>
+        <main>
+            <Title>Favorites</Title>
+        </main>
     )
 };
 

@@ -1,6 +1,10 @@
+import { Title } from "./Catalog.styled";
+
 const Catalog = () => {
     return (
-        <title>Catalog</title>
+        <main>
+            <Title>Catalog</Title>
+        </main>
     )
 };
 
