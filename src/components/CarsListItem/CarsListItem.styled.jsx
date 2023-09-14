@@ -15,11 +15,13 @@ export const Image = styled.img`
     object-fit: cover;
     border-radius: 14px;
 `;
+
 export const InfoWrap = styled.div`
     // display: flex;
     // flex-direction: column;
     padding-bottom: 28px;
 `;
+
 export const TitleWrap = styled.div`
     display: flex;
     justify-content: space-between;

@@ -14,7 +14,7 @@ const initialState = {
     items: [],
     shownItem: {},
     isLoading: false,
-    error: null
+    error: null,
 };
 
 const carsSlice = createSlice({
