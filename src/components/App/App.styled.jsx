@@ -6,5 +6,6 @@ export const Container = styled.div`
     padding-right: 128px;
     margin-left: auto;
     margin-right: auto;
-    outline: 2px solid tomato;
+    // outline: 2px solid tomato;
+
 `;

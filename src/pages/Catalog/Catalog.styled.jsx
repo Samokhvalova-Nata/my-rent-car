@@ -12,8 +12,8 @@ export const Button = styled.button`
     color: var(--accent-color);
     font-size: 16px;
     font-weight: 500;
-    text-decoration-line: underline;
-    margin-bottom: 150px;
+    text-decoration: underline;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 150px;
 `;

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { CarsList } from "../../components/CarsList/CarsList";
 // import { Title } from "./Catalog.styled";
 import { selectIsLoading, selectError } from '../../redux/selectors';
@@ -14,20 +14,33 @@ const Catalog = () => {
     const operation = useSelector(selectIsLoading);
     const error = useSelector(selectError);
 
-    useEffect(() => {
-        dispatch(getAllCars());
-    }, [dispatch]);    
+    const [page, setPage] = useState(1);
+
+    // useEffect(() => {
+    //     dispatch(getAllCars());
+    // }, [dispatch]);    
     
+    useEffect(() => {
+        dispatch(getAllCars(page));
+    }, [dispatch, page]);  
+
+    const handleLoadNoreClick = () => {
+        setPage(page+1)
+    }
 
     return (
         <main>
-            {error && toast.error('Ooops!..Something went wrong. Try to reload page')}
+            {error && toast.error('Ooops!..Something went wro ng. Try to reload page')}
             {operation === 'getAll' && !error && <Loader />}
             <CarsList />
-            <Button>Load more</Button>
+            {page < 5
+                // ? (toast.success('You have seen all cars'))
+                && <Button onClick={handleLoadNoreClick}>Load more</Button>
+                }
+            
         </main>
     )
-    // TODO Add Loadmore btn, filter
+    // TODO Add  filter
 };
 
 export default Catalog;

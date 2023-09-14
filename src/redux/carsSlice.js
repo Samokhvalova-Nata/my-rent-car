@@ -28,7 +28,8 @@ const carsSlice = createSlice({
             .addCase(getAllCars.fulfilled, (state, { payload }) => {
                 state.isLoading = false;
                 state.error = null;
-                state.items = payload;
+                // state.items = payload;
+                state.items.push(...payload);
             })
             .addCase(getAllCars.rejected, handleRejected)
 
