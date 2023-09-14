@@ -1,6 +1,15 @@
 import { useDispatch } from 'react-redux';
 import { getCarById } from 'redux/operations';
-import { Button, Details, Image, Info, Item } from "./CarsListItem.styled";
+import { ReactComponent as FavoriteIcon } from '../../images/favorite.svg';
+import { Button, Image, Title, Item, Span, TitleWrap, DetailsItem, DetailsList, InfoWrap } from "./CarsListItem.styled";
+
+const iconStyles = {
+    position: 'absolute',
+    stroke: '#FFFFFFCC',
+    fill: 'transparent',
+    top: 14,
+    right: 14,
+};
 
 export const CarsListItem = ({
         id,
@@ -11,19 +20,37 @@ export const CarsListItem = ({
         address,
         rentalCompany,
         type,
-        functionalities,
+        accessories,
+        mileage,
         img
     }) => {
     const dispatch = useDispatch();
     const handleClick = () => dispatch(getCarById(id));
     return (
         <Item>
-            <Image src={img} alt={make} loading="lazy"/>
-            <Info>{make}</Info>
-            <Details>{rentalCompany}</Details>
+            <InfoWrap>
+                <FavoriteIcon width='18' height='18'
+                    style={iconStyles}/>
+                <Image src={img} alt={make} loading="lazy" />
+                <TitleWrap>
+                    <Title>{make} <Span>{model}, </Span>{year}</Title>
+                    <p>{rentalPrice}</p>
+                </TitleWrap>
+                <DetailsList>
+                    <DetailsItem>{address.split(',')[1]}</DetailsItem>
+                    <DetailsItem>{address.split(',')[2]}</DetailsItem>
+                    <DetailsItem>{rentalCompany}</DetailsItem>
+                </DetailsList>
+                <DetailsList>
+                    <DetailsItem>{type}</DetailsItem>
+                    <DetailsItem>{model}</DetailsItem>
+                    <DetailsItem>{mileage}</DetailsItem>
+                    <DetailsItem>{accessories[0]}</DetailsItem>
+                </DetailsList>
+            </InfoWrap>
             <Button type='button'
-                onClick={handleClick}
-            >
+                    onClick={handleClick}
+                >
                 Learn more
             </Button>
         </Item>

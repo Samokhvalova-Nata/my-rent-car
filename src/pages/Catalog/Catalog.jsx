@@ -6,6 +6,7 @@ import { selectIsLoading, selectError } from '../../redux/selectors';
 import { Loader } from '../../components/Loader/Loader';
 import { getAllCars } from '../../redux/operations';
 import { toast } from 'react-hot-toast';
+import { Button } from './Catalog.styled';
 
 
 const Catalog = () => {
@@ -23,7 +24,7 @@ const Catalog = () => {
             {error && toast.error('Ooops!..Something went wrong. Try to reload page')}
             {operation === 'getAll' && !error && <Loader />}
             <CarsList />
-            
+            <Button>Load more</Button>
         </main>
     )
     // TODO Add Loadmore btn, filter

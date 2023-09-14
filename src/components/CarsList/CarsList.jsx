@@ -8,7 +8,7 @@ export const CarsList = () => {
 
     return (
         <List>
-            {cars.map(({  id, make, model, year, rentalPrice, address, rentalCompany, type, functionalities, img }) => (
+            {cars.map(({  id, make, model, year, rentalPrice, address, rentalCompany, type, accessories, mileage, img }) => (
                 <CarsListItem
                     key={id}
                     id={id}
@@ -19,7 +19,8 @@ export const CarsList = () => {
                     address={address}
                     rentalCompany={rentalCompany}
                     type={type}
-                    functionalities={functionalities}
+                    accessories={accessories}
+                    mileage={mileage}
                     img={img}
                 />
             ))}

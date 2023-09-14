@@ -1,50 +1,73 @@
 import styled from '@emotion/styled';
 
 export const Item = styled.li`
-    flex-basis: calc((100% - 4 * (29px)) / 5); 
-    // width: 274px;
-    height: 426px;
+    flex-basis: calc((100% - 3 * (29px)) / 4); 
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-
-    // justify-content: space-between;
-    padding: 20px 0px;
+    justify-content: space-between;
 `;
 
 export const Image = styled.img`
     width: 100%;
+    height: 268px;
     display: block;
     object-fit: cover;
     border-radius: 14px;
-    // background-color: linear-gradient(180deg, rgba(18, 20, 23, 0.50) 2.5%, rgba(18, 20, 23, 0.00) 41.07%), #F3F3F2;
-
-    // transition: var(--transition);
-    // &:hover,
-    // &:focus {
-    //     border-bottom-left-radius: 0px;
-    //     border-bottom-right-radius: 0px;
-    // }
 `;
-
-export const Info = styled.h2`
-    font-weight: 500;
-    color: var(--primary-text-color);
+export const InfoWrap = styled.div`
+    // display: flex;
+    // flex-direction: column;
+    padding-bottom: 28px;
+`;
+export const TitleWrap = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 14px;
     padding-bottom: 8px;
 `;
 
-export const Details = styled.p`
+export const Title = styled.h2`
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--primary-text-color);
+`;
+
+export const Span = styled.span`
+    color: var(--accent-color);
+`;
+
+export const DetailsList = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+`;
+
+export const DetailsItem = styled.li`
     font-size: 12px;
-    padding-bottom: 28px;
+    color: var(--secondary-text-color);
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child)::after {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 16px;
+        background-color: var(--lines-background-color);
+        margin-left: 6px;
+        margin-right: 6px;
+    }
 `;
 
 export const Button = styled.button`
-    min-width: 274px;
+    width: 100%;
     height: 44px;
+
     border-radius: 12px;
     background-color: var(--accent-color);
     color: var(--text-button-color);
+    font-size: 14px;
     font-weight: 600;
     transition: background-color var(--transition);
 
