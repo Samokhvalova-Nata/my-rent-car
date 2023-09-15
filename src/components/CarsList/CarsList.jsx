@@ -7,7 +7,7 @@ export const CarsList = () => {
     const cars = useSelector(selectCars);
     const filtredCars = useSelector(selectFiltredCars);
 
-    console.log('filtredCars', filtredCars)
+    // console.log('filtredCars', filtredCars)
 
     const arrayForRender = filtredCars ? filtredCars : cars
 

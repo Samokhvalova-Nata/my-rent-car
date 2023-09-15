@@ -3,6 +3,30 @@ import { useDispatch } from "react-redux";
 import { updateFilter } from "redux/filtersSlice";
 import { Button, Container, Forma, Input, Label } from "./Filter.styled";
 
+// const options = [
+//     "Buick",
+//     "Volvo",
+//     "HUMMER",
+//     "Subaru",
+//     "Mitsubishi",
+//     "Nissan",
+//     "Lincoln",
+//     "GMC",
+//     "Hyundai",
+//     "MINI",
+//     "Bentley",
+//     "Mercedes-Benz",
+//     "Aston Martin",
+//     "Pontiac",
+//     "Lamborghini",
+//     "Audi",
+//     "BMW",
+//     "Chevrolet",
+//     "Mercedes-Benz",
+//     "Chrysler",
+//     "Kia",
+//     "Land"
+// ];
 
 export const Filter = () => {
     const dispatch = useDispatch();
@@ -15,6 +39,8 @@ export const Filter = () => {
         const mileageTo = form.elements.mileageTo.value;
         const price = form.elements.price.value;
 
+// TODO Update filter logic
+        
         if (brand === '' || price === '' || mileageFrom === '' || mileageTo === '') {toast.error('Fields cannot be empty. Enter some data!');
             return;
         }
@@ -29,7 +55,6 @@ export const Filter = () => {
                 <Label htmlFor="brand">Car brand
                 <Input type="text" name="brand"/>
                 </Label>
-                
 
                 <Label htmlFor="price">Price/ 1 hour
                 <select name='price'>

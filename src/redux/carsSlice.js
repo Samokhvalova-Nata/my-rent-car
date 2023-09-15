@@ -33,15 +33,15 @@ const carsSlice = createSlice({
             })
             .addCase(getAllCars.rejected, handleRejected)
 
-            .addCase(getCarById.pending, (state) => {
-                state.isLoading = "getById";
-            })
-            .addCase(getCarById.fulfilled, (state, { payload }) => {
-                state.isLoading = false;
-                state.error = null;
-                state.shownItem = payload;
-            })
-            .addCase(getCarById.rejected, handleRejected)
+            // .addCase(getCarById.pending, (state) => {
+            //     state.isLoading = "getById";
+            // })
+            // .addCase(getCarById.fulfilled, (state, { payload }) => {
+            //     state.isLoading = false;
+            //     state.error = null;
+            //     state.shownItem = payload;
+            // })
+            // .addCase(getCarById.rejected, handleRejected)
     }
 });
 
