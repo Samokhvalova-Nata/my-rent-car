@@ -1,9 +1,15 @@
-import { Title } from "../Home/Home.styled";
+import { useSelector } from "react-redux";
+import { selectFavoriteCars } from "redux/selectors";
+import { CarsList } from "components/CarsList";
 
 const Favorites = () => {
+    const favorites = useSelector(selectFavoriteCars);
+
+    console.log('favorites on page', favorites)
+
     return (
         <main>
-            <Title>Favorites</Title>
+            <CarsList cars={favorites} />
         </main>
     )
 };

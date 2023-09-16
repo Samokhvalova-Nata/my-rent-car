@@ -70,7 +70,7 @@ img {
 }
 
 button {
-  /* cursor: pointer; */
+  cursor: pointer;
   font-family: inherit;
   border: none;
 }

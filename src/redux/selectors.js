@@ -8,6 +8,7 @@ export const selectFilterMileageFrom = (state) => state.filter.filterMileage.fro
 export const selectFilterMileageTo = (state) => state.filter.filterMileage.to;
 export const selectIsLoading = (state) => state.cars.isLoading;
 export const selectError = (state) => state.cars.error;
+export const selectFavorites = (state) => state.favorites.favorites;
 
 export const selectCarsByBrand = createSelector(
     [selectFilterBrand, selectCars ],
@@ -25,6 +26,8 @@ export const selectCarsByPrice = createSelector(
         return cars.filter((car) => car.rentalPrice <= filterPrice);
     }
 );
+
+
 
 // export const selectCarsByMileage = createSelector(
 //     [selectFilterMileage, selectCars],
@@ -108,5 +111,11 @@ export const selectFiltredCars = createSelector(
 
             return selectCarsByMileage;
         }
+    }
+);
+
+export const selectFavoriteCars = createSelector([selectCars, selectFavorites],
+    (cars, favorites) => {
+        return cars.filter(car => favorites.includes(car.id))
     }
 );

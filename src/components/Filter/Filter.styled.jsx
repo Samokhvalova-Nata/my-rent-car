@@ -37,6 +37,7 @@ export const Button = styled.button`
     color: var(--text-button-color);
     font-size: 14px;
     font-weight: 600;
+    cursor: pointer;
     transition: background-color var(--transition);
 
         &:hover,

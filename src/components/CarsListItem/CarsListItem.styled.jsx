@@ -72,6 +72,7 @@ export const Button = styled.button`
     font-size: 14px;
     font-weight: 600;
     line-height: 1.43;
+    cursor: pointer;
     transition: background-color var(--transition);
 
         &:hover,

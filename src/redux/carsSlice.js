@@ -22,10 +22,14 @@ const carsSlice = createSlice({
             .addCase(getAllCars.pending, (state) => {
                 state.isLoading = true;
             })
-            .addCase(getAllCars.fulfilled, (state, { payload }) => {
+            .addCase(getAllCars.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.error = null;
-                state.items.push(...payload);
+                if (action.meta.arg === 1) {
+                    state.items = action.payload;
+                } else {
+                    state.items.push(...action.payload)
+                }
             })
             .addCase(getAllCars.rejected, handleRejected)
     }
