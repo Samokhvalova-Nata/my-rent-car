@@ -13,10 +13,7 @@ export const Overlay = styled.div`
 `;
 
 export const ModalStyled = styled.div`
-    // max-width: calc(100vw - 48px);
-    // max-height: calc(100vh - 24px);
     width: 541px;
-    height: 752px;
     border-radius: 24px;
     background-color: var(--text-button-color);
     padding: 40px;
@@ -32,8 +29,6 @@ export const Image = styled.img`
 `;
 
 export const InfoWrap = styled.div`
-    // display: flex;
-    // flex-direction: column;
     margin-top: 14px;
     margin-bottom: 24px;
 `;
@@ -100,24 +95,40 @@ export const ConditionList = styled.ul`
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    // justify-content: center;
-    // align-items: center;
+    width: 461px;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     letter-spacing: -0.24px;
 `;
 
 export const ConditionItem = styled.li`
-    display: block;
-    height: 32px;
     border-radius: 35px;
     color: var(--text-conditions-color);
     background-color: var(--conditions-background-color);
     padding: 7px 14px;
-    text-align: center;
 `;
 
 export const SpanCondition = styled.span`
     color: var(--accent-color);
     font-weight: 600;
+`;
+
+export const Button = styled.a`
+    width: 168px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+    background-color: var(--accent-color);
+    color: var(--text-button-color);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.43;
+    transition: background-color var(--transition);
+
+        &:hover,
+        &:focus {
+        background-color: var(--hover-color);
 `;

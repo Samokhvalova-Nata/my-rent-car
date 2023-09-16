@@ -11,7 +11,7 @@ import { Filter } from 'components/Filter';
 
 const Catalog = () => {
     const dispatch = useDispatch();
-    const operation = useSelector(selectIsLoading);
+    const loading = useSelector(selectIsLoading);
     const error = useSelector(selectError);
     const [page, setPage] = useState(1);
 
@@ -27,13 +27,12 @@ const Catalog = () => {
     return (
         <main>
             {error && toast.error('Ooops!..Something went wro ng. Try to reload page')}
-            {operation === 'getAll' && !error && <Loader />}
+            {loading && !error && <Loader />}
             <Filter/>
             <CarsList />
-            {page < 5 && !operation
-                // ? (toast.success('You have seen all cars'))
-                && <Button onClick={handleLoadNoreClick}>Load more</Button>
-                }
+            {page < 5 && !loading &&
+                <Button onClick={handleLoadNoreClick}>Load more</Button>
+            }
         </main>
     )
 };
