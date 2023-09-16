@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import Image from "../../images/bg-hero-second.jpg";
 
 export const Section = styled.section`
-    // height: 440px;
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
@@ -12,6 +11,7 @@ export const Section = styled.section`
     text-align: left;
     background-color: var(--borders-color);
     background-repeat: no-repeat;
+    background-size: cover;
     background-image: url(${Image});
 `;
 
@@ -19,10 +19,7 @@ export const Title = styled.h1`
     margin-right: auto;
     margin-left: auto;
     text-align: left;
-    // text-transform: uppercase;
-
     margin-bottom: 15px;
-    // padding-left: 50px;
     font-size: 30px;
     color: var( --text-button-color);
 `;
@@ -30,7 +27,6 @@ export const Title = styled.h1`
 export const Description = styled.p`
     width: 450px;
     text-align: left;
-    // padding-left: 50px;
     margin-bottom: 25px;
     font-size: 16px;
     color: var( --text-button-color);
@@ -53,4 +49,51 @@ export const Button = styled.button`
         &:hover,
         &:focus {
         background-color: var(--hover-color);
+`;
+
+export const ReasonSection = styled.section`
+    // outline: 2px solid tomato;
+`;
+
+export const ReasonsTitle = styled.h2`
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: var(--primary-text-color);
+`;
+
+export const ReasonsList = styled.ul`
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const ReasonsItem = styled.li`
+    flex-basis: calc((100% - 3 * 30) / 4);
+`;
+
+export const ReasonsWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 180px;
+    border-radius: 4px;
+    padding: 0 15px 0;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    background: var(--secondary-background-color);
+`;
+
+export const ReasonsText = styled.p`
+    margin-top: 18px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.24px;
 `;

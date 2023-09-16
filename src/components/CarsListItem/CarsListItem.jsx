@@ -46,14 +46,6 @@ export const CarsListItem = ({
         dispatch(deleteFavorite(favId))
     };
 
-    // const handleToggleFavorites = (favId) => {
-    //     if (favorites.includes(favId)) {
-    //         dispatch(deleteFavorite(favId))
-    //         return;
-    //     }
-    //     dispatch(addFavorite(favId))
-    // };
-
     return (
         <>
             <Item>
