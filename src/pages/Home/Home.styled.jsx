@@ -86,7 +86,6 @@ export const ReasonsWrap = styled.div`
     height: 180px;
     border-radius: 4px;
     padding: 0 15px 0;
-    margin-bottom: 30px;
     box-shadow: var(--shadow);
     background: var(--secondary-background-color);
 `;
@@ -97,3 +96,40 @@ export const ReasonsText = styled.p`
     font-size: 16px;
     letter-spacing: -0.24px;
 `;
+
+export const AdvantagesSection = styled.section`
+    width: 1340px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    // padding-top: 120px;
+    // padding-bottom: 120px;
+    // padding-left: 50px;
+    text-align: left;
+    // outline: 2px solid tomato;
+`;
+
+export const AdvantagesText = styled.p`
+    font-size: 16px;
+    color: var(--primary-text-color);
+`;
+
+export const AdvantagesList = styled.ul`
+    margin: 15px 10px;
+`;
+
+export const AdvantagesItem = styled.li`
+    display: inline-flex;
+    width: 100%;
+    font-size: 16px;
+    color: var(--primary-text-color);
+
+    &::before {
+        content: '';
+        min-width: 8px;
+        height: 8px;
+        margin: 8px 10px 0 0;
+        background-color: var(--accent-color);
+    }
+`;
+

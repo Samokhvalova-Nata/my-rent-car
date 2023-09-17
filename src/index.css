@@ -12,6 +12,7 @@
   --text-button-color: #FFFFFF;
   --input-color: rgba(247, 247, 251, 1);
   --input-border-hover-color: #2684FF;
+  --input-placeholder-text-color: #000000;
 
 
   --primary-background-color: #CDCDCD;
@@ -19,6 +20,7 @@
   --conditions-background-color: #F9F9F9;
   --borders-color: rgba(18, 20, 23, 0.05);
   --lines-background-color: rgba(18, 20, 23, 0.1);
+  --scroll-background-color: rgba(18, 20, 23, 0.05);
   --shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -36,7 +38,8 @@ body {
   background-color: var(--background-color);
   color: var(--text-primary-color);
   margin: 0;
-  /* height: 100vh; */
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 code {

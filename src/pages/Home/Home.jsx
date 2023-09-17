@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { Button, Description, ReasonSection, ReasonsItem, ReasonsList, ReasonsText, ReasonsTitle, ReasonsWrap, Section, Title } from "./Home.styled";
+import { AdvantagesItem, AdvantagesList, AdvantagesSection, AdvantagesText, Button, Description, ReasonSection, ReasonsItem, ReasonsList, ReasonsText, ReasonsTitle, ReasonsWrap, Section, Title } from "./Home.styled";
 import { ReactComponent as CarIcon } from '../../images/car_rent.svg';
 import { ReactComponent as SupportIcon } from '../../images/headset.svg';
 import { ReactComponent as PriceIcon } from '../../images/price.svg';
@@ -53,6 +53,26 @@ const Home = () => {
                     </ReasonsItem>
                 </ReasonsList>
             </ReasonSection>
+            <AdvantagesSection>
+                <ReasonsTitle>Our advantages</ReasonsTitle>
+                <AdvantagesText>
+                    In matters of cooperation with a client, we adhere the principles of partnership, which provides a lot of advantages. Concluding a car rental agreement with our company, you can be sure that:
+                </AdvantagesText>
+                <AdvantagesList>
+                    <AdvantagesItem>
+                        each car is fully serviceable, regularly undergoes scheduled inspection;
+                    </AdvantagesItem>
+                    <AdvantagesItem>all vehicles are insured;</AdvantagesItem>
+                    <AdvantagesItem>we will provide a refilled car;</AdvantagesItem>
+                    <AdvantagesItem>a car will be delivered clean, and it is not necessary to wash it before return;</AdvantagesItem>
+                    <AdvantagesItem>if necessary, you will be provided with additional equipment, such as a child seat or a GPS navigator;</AdvantagesItem>
+                    <AdvantagesItem>round-the-clock technical support service will always be in touch, wherever you are;</AdvantagesItem>
+                    <AdvantagesItem>you will be required to pay only the amount indicated in the contract. Additional commissions and other hidden payments are excluded.</AdvantagesItem>
+                </AdvantagesList>
+                <AdvantagesText>
+                    Renting a car with us is advantageous, comfortable and safe. Try our services and just be sure of it!
+                </AdvantagesText>
+            </AdvantagesSection>
         </main>
     )
 };

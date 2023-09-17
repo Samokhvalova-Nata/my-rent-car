@@ -5,20 +5,6 @@ export const Container = styled.div`
     margin-left: auto;
     margin-right: auto;
     padding-top: 100px;
-
-    // &::-webkit-scrollbar {
-    //     width: 8px; 
-    //     height: 66px;
-    // }
-
-    // &::-webkit-scrollbar-track {
-    //     background-color: #FFF;
-    // }
-
-    // &::-webkit-scrollbar-thumb {
-    //     background-color: rgba(18, 20, 23, 0.05);
-    //     border-radius: 10px;
-    // }
 `;
 
 export const Forma = styled.form`
@@ -32,6 +18,7 @@ export const Label = styled.label`
     margin-bottom: 8px;
     color: var(--text-filter-title-color);
     font-size: 14px;
+    position: relative;
 `;
 
 export const InputBrandWrap = styled.div`
@@ -44,54 +31,67 @@ export const InputPriceWrap = styled.div`
 
 export const InputMileageWrap = styled.div`
     display: flex;
+    position: relative;
+`;
+
+export const InputMileageText = styled.p`
+    position: absolute;
+    top: 34px;
+    left: 24px;
+    color: var(--input-placeholder-text-color);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
 `;
 
 export const InputMileageFrom = styled.input`
+    box-sizing: border-box;
     width: 160px;     
     height: 48px;
-    padding-left: 24px;
+    padding: 14px 14px 14px 86px;
     background-color: var(--input-color);
     outline: transparent;
     font-size: 16px;
     border-color: transparent;
-    border-width: 1.5px;
-    border-top-left-radius: 14px;
-    border-bottom-left-radius: 14px;
+    border-radius: 14px 0px 0px 14px;
     border-right: 1px solid rgba(138, 138, 137, 0.20);
+    transition: border-color var(--transition);
 
-    &::placeholder {
-        color: var(--primary-text-color);
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 1.11;
-    }
     &:hover,
-    &:focus {
+    :focus {
         border-color: var(--input-border-hover-color);
+    }
+
+    &::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+    }
 `;
 
 export const InputMileageTo = styled.input`
-    width: 160px; 
+    box-sizing: border-box;
+    max-width: 160px; 
     height: 48px;
-    padding-left: 24px;
+    padding: 14px 14px 14px 86px;
     background-color: var(--input-color);
     outline: transparent;
     font-size: 16px;
     border-color: transparent;
-    border-width: 1.5px;
-    border-top-right-radius: 14px;
-    border-bottom-right-radius: 14px;
+    border-radius: 0px 14px 14px 0px;
     transition: border-color var(--transition);
 
-    &::placeholder {
-        color: var(--primary-text-color);
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 1.11;
-    }
     &:hover,
     &:focus {
         border-color: var(--input-border-hover-color);
+    }
+    &::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+    }
 `;
 
 export const Button = styled.button`

@@ -1,8 +1,10 @@
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { updateFilter } from "redux/filtersSlice";
-import { Button, Container, Forma, InputBrandWrap, InputMileageFrom, InputMileageTo, InputMileageWrap, InputPriceWrap, Label } from "./Filter.styled";
+import { Button, Container, Forma, InputBrandWrap, InputMileageFrom, InputMileageText, InputMileageTo, InputMileageWrap, InputPriceWrap, Label } from "./Filter.styled";
 import { SelectInput } from "components/Select/Select";
+import { useRef } from "react";
+
 
 const optionsPrice = [
     { value: '30', label: '30' },
@@ -42,6 +44,8 @@ const optionsBrand= [
 
 export const Filter = () => {
     const dispatch = useDispatch();
+    const selectBrandRef = useRef(null);
+    const selectPriceRef = useRef(null);
 
     const handleSubmitForm = (e) => {
         e.preventDefault();
@@ -51,37 +55,61 @@ export const Filter = () => {
         const mileageTo = form.elements.mileageTo.value;
         const price = form.elements.price.value;
 
-// TODO Update filter logic
         
         if (brand === '' || price === '' || mileageFrom === '' || mileageTo === '') {toast.error('Fields cannot be empty. Enter some data!');
             return;
         }
         dispatch(updateFilter({ brand, price, mileageFrom, mileageTo }));
         form.reset();
+        selectBrandRef.current.clearValue();
+        selectPriceRef.current.clearValue();
     };
 
     return (
         <Container>
             <Forma onSubmit={handleSubmitForm}>
 
-                <Label htmlFor="brand">Car brand
+                <Label>Car brand
                     <InputBrandWrap>
-                        <SelectInput name={'brand'} options={optionsBrand} placeholder={'Enter the text'} />
+                        <SelectInput
+                            name={'brand'}
+                            options={optionsBrand}
+                            refProp={selectBrandRef}
+                            placeholder={'Enter the text'} />
                     </InputBrandWrap>
                 </Label>
 
-                <Label htmlFor="price">Price/ 1 hour
+                <Label>Price/ 1 hour
                     <InputPriceWrap>
-                        <SelectInput name={'price'} options={optionsPrice} placeholder={'To $'}/>
+                        <SelectInput
+                            name={'price'}
+                            options={optionsPrice}
+                            refProp={selectPriceRef}
+                            placeholder={'To $'} />
                     </InputPriceWrap>
                 </Label>
 
-                <Label htmlFor="mileageFrom">Сar mileage / km
-                    <InputMileageWrap>
-                        <InputMileageFrom type="text" name="mileageFrom" placeholder="From" />
-                        <InputMileageTo type="text" name="mileageTo" placeholder="To" />
-                    </InputMileageWrap>
-                </Label>
+                <InputMileageWrap>
+                    <Label>Сar mileage / km
+                        <InputMileageText>From</InputMileageText>
+                        <InputMileageFrom
+                            required
+                            type="number"
+                            name="mileageFrom"
+                            min="4000" max="6000"
+                            title="Enter a number from 4000 to 6000"
+                        />
+                    </Label>
+                    <Label style={{color: 'white'}}>Сar mileage / km
+                        <InputMileageText>To</InputMileageText>
+                        <InputMileageTo
+                            required
+                            type="number"
+                            name="mileageTo"
+                            min="4001" max="7000"
+                            title="Enter a number from 4001 to 7000" />
+                    </Label>
+                </InputMileageWrap>
 
                 <Button type='submit'>Search</Button>
             </Forma>
