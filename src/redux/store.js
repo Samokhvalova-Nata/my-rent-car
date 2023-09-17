@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
-    persistStore,
+	persistStore,
+	persistReducer,
     FLUSH,
     REHYDRATE,
     PAUSE,
@@ -8,16 +9,15 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist';
-import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { carsReducer } from "./carsSlice";
 import { filterReducer } from "./filtersSlice";
 import { favoriteReducer } from "./favoriteSlice";
 
 const persistConfig = {
-  key: "favorites",
-  storage,
-  whitelist: ["favorites"],
+  	key: "favorites",
+  	storage,
+  	whitelist: ["favorites"],
 };
 
 const persistedFavoriteReducer = persistReducer(persistConfig, favoriteReducer);

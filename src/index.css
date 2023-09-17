@@ -4,16 +4,17 @@
 :root {
   --accent-color: #3470FF;
   --hover-color: #0B44CD;
+
   --primary-text-color: #121417;
   --secondary-text-color: rgba(18, 20, 23, 0.5);
   --text-conditions-color: #363535;
   --text-filter-title-color: #8A8A89;
   --text-filter-options-color: rgba(18, 20, 23, 0.2);
   --text-button-color: #FFFFFF;
+
   --input-color: rgba(247, 247, 251, 1);
   --input-border-hover-color: #2684FF;
   --input-placeholder-text-color: #000000;
-
 
   --primary-background-color: #CDCDCD;
   --secondary-background-color: #F7F7FB; 

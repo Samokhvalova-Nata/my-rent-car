@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
-import { getCars } from "redux/operations";
+import { getAllCars } from "redux/operations";
 import { updateFilter } from "redux/filtersSlice";
 import { SelectInput } from "components/Select/Select";
 import { Button, Container, Forma, InputBrandWrap, InputMileageFrom, InputMileageText, InputMileageTo, InputMileageWrap, InputPriceWrap, Label } from "./Filter.styled";
@@ -75,7 +75,7 @@ export const Filter = () => {
             return;
         }
         dispatch(updateFilter({ brand, price, mileageFrom, mileageTo }));
-        dispatch(getCars());
+        dispatch(getAllCars());
         form.reset();
         selectBrandRef.current.clearValue();
         selectPriceRef.current.clearValue();

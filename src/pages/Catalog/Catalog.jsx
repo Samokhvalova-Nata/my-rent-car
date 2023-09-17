@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from "react-helmet";
 import { toast } from 'react-hot-toast';
 import { resetFilter } from 'redux/filtersSlice';
-import { getAllCars } from 'redux/operations';
+import { getCarsByPage } from 'redux/operations';
 import { selectIsLoading, selectError, selectCars, selectFiltredCars, selectIsFiltred } from 'redux/selectors';
 import { CarsList } from 'components/CarsList';
 import { Filter } from 'components/Filter';
@@ -24,9 +24,9 @@ const Catalog = () => {
     const arrayForRender = filtredCars ? filtredCars : cars;
 
     useEffect(() => {
-        dispatch(getAllCars(page));
+        dispatch(getCarsByPage(page));
         dispatch(resetFilter());
-    }, [dispatch, page]);  
+    }, [dispatch, page]); 
 
     useEffect(() => {
         if (arrayForRender.length === 36) {

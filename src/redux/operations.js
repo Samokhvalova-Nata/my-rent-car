@@ -4,8 +4,8 @@ import axios from "axios";
 axios.defaults.baseURL = "https://648b60e317f1536d65eae307.mockapi.io";
 
 
-export const getAllCars = createAsyncThunk(
-    "cars/getAll",
+export const getCarsByPage = createAsyncThunk(
+    "cars/getCarsByPage",
     async (page, thunkAPI) => {
         try {
             const response = await axios.get('/adverts', {
@@ -18,9 +18,8 @@ export const getAllCars = createAsyncThunk(
     }
 );
 
-
-export const getCars = createAsyncThunk(
-    "cars/getCars",
+export const getAllCars = createAsyncThunk(
+    "cars/getAllCars",
     async (_, thunkAPI) => {
         try {
         const response = await axios.get("/adverts");

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllCars, getCars } from "./operations";
+import { getCarsByPage, getAllCars } from "./operations";
 
 
 const handleRejected = (state, action) => {
@@ -24,8 +24,8 @@ const carsSlice = createSlice({
     initialState,
     extraReducers: (builder) => {
         builder
-            .addCase(getAllCars.pending, handlePending)
-            .addCase(getAllCars.fulfilled, (state, action) => {
+            .addCase(getCarsByPage.pending, handlePending)
+            .addCase(getCarsByPage.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.error = null;
                 if (action.meta.arg === 1) {
@@ -34,15 +34,15 @@ const carsSlice = createSlice({
                     state.items.push(...action.payload)
                 }
             })
-            .addCase(getAllCars.rejected, handleRejected)
+            .addCase(getCarsByPage.rejected, handleRejected)
 
-            .addCase(getCars.pending, handlePending)
-            .addCase(getCars.fulfilled, (state, action) => {
+            .addCase(getAllCars.pending, handlePending)
+            .addCase(getAllCars.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.error = null;
-                    state.allCars = action.payload;
+                state.allCars = action.payload;
             })
-            .addCase(getCars.rejected, handleRejected)
+            .addCase(getAllCars.rejected, handleRejected)
     }
 });
 
