@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { Helmet } from "react-helmet";
 import { CarsList } from "../../components/CarsList/CarsList";
 import { selectIsLoading, selectError, selectCars, selectFiltredCars } from '../../redux/selectors';
 import { Loader } from '../../components/Loader/Loader';
@@ -36,6 +37,9 @@ const Catalog = () => {
 
     return (
         <main>
+            <Helmet>
+                <title>Catalog</title>
+            </Helmet>
             {error && toast.error('Ooops!..Something went wro ng. Try to reload page')}
             {loading && !error && <Loader />}
             <Filter/>

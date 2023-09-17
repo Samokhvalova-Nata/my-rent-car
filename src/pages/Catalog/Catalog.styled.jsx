@@ -17,4 +17,5 @@ export const Button = styled.button`
     margin-left: auto;
     margin-bottom: 150px;
     cursor: pointer;
+    background-color: transparent;
 `;

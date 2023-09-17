@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { Button, Description, ReasonSection, ReasonsItem, ReasonsList, ReasonsText, ReasonsTitle, ReasonsWrap, Section, Title } from "./Home.styled";
 import { ReactComponent as CarIcon } from '../../images/car_rent.svg';
 import { ReactComponent as SupportIcon } from '../../images/headset.svg';
@@ -15,6 +16,9 @@ const Home = () => {
 
     return (
         <main>
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             <Section>
                 <Title>Where Your Journey Begins!</Title>
                 <Description>You can easily make a request and rent a car in Ukraine – just choose car in catalog and contact us. Do not miss the unique chance to inexpensively rent a car of the class you need!</Description>

@@ -9,7 +9,7 @@ export const Header = styled.header`
   justify-content: space-between;
   gap: 20px;
   padding: 8px 0;
-  margin-bottom: 16px;
+  margin: 20px 0;
 
   > nav {
     display: flex;
