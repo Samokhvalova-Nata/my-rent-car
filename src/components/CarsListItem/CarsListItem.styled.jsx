@@ -17,10 +17,17 @@ export const Image = styled.img`
 `;
 
 export const InfoWrap = styled.div`
-    // display: flex;
-    // flex-direction: column;
     padding-bottom: 28px;
 `;
+
+export const iconStyles = {
+    position: 'absolute',
+    stroke: '#3470FF',
+    fill: 'transparent',
+    top: 14,
+    right: 14,
+    cursor: 'pointer',
+};
 
 export const TitleWrap = styled.div`
     display: flex;

@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import { Header, Link } from "./Layout.styled";
 import Loader from "../Loader/Loader";
+import { Header, Link } from "./Layout.styled";
 
 
 const Layout = () => {

@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import Image from "../../images/bg-hero-second.jpg";
 
-export const Section = styled.section`
-    max-width: 1440px;
+export const SectionHero = styled.section`
+    max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 120px;
@@ -46,20 +46,19 @@ export const Button = styled.button`
     cursor: pointer;
     transition: background-color var(--transition);
 
-        &:hover,
-        &:focus {
+    &:hover,
+    &:focus {
         background-color: var(--hover-color);
 `;
 
 export const ReasonSection = styled.section`
-    // outline: 2px solid tomato;
+    margin-top: 50px;
 `;
 
 export const ReasonsTitle = styled.h2`
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-    margin-top: 50px;
     margin-bottom: 30px;
     text-transform: uppercase;
     font-size: 20px;
@@ -82,7 +81,7 @@ export const ReasonsWrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 280px;
+    width: 260px;
     height: 180px;
     border-radius: 4px;
     padding: 0 15px 0;
@@ -98,15 +97,9 @@ export const ReasonsText = styled.p`
 `;
 
 export const AdvantagesSection = styled.section`
-    width: 1340px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-    // padding-top: 120px;
-    // padding-bottom: 120px;
-    // padding-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 30px;
     text-align: left;
-    // outline: 2px solid tomato;
 `;
 
 export const AdvantagesText = styled.p`
@@ -132,4 +125,3 @@ export const AdvantagesItem = styled.li`
         background-color: var(--accent-color);
     }
 `;
-

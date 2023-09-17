@@ -28,7 +28,7 @@ const customStyles = {
         cursor: 'pointer',
     }),
     dropdownIndicator: (provided, state) => ({
-            ...provided,
+        ...provided,
         color: 'var(--primary-text-color)',
         cursor: 'pointer',
         transform: state.isFocused ? 'rotate(180deg)' : null,

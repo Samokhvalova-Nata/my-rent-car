@@ -1,8 +1,8 @@
+import { CarsListItem } from 'components/CarsListItem';
 import { List } from './CarsList.styled';
-import { CarsListItem } from '../../components/CarsListItem/CarsListItem';
+
 
 export const CarsList = ({cars}) => {
-
     return (
         <List>
             {cars.map(({  id, make, model, year, rentalPrice, address, rentalCompany, type, accessories, mileage, img }) => (

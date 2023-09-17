@@ -1,13 +1,23 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
-import { selectFavoriteCars } from "redux/selectors";
+import { getCars } from "redux/operations";
+import { resetFilter } from "redux/filtersSlice";
+import { selectFavoriteCars, selectFiltredFavoriteCars, selectIsFiltred } from "redux/selectors";
 import { CarsList } from "components/CarsList";
 import { Filter } from "components/Filter";
 
-const Favorites = () => {
-    const favorites = useSelector(selectFavoriteCars);
 
-// TODO Update filter logic
+const Favorites = () => {
+    const dispatch = useDispatch();
+    const isFiltred = useSelector(selectIsFiltred);
+    const favorites = useSelector(selectFavoriteCars);
+    const filtredFavorites = useSelector(selectFiltredFavoriteCars);
+
+    useEffect(() => {
+        dispatch(getCars());
+        dispatch(resetFilter());
+    }, [dispatch]);
 
     return (
         <main>
@@ -15,7 +25,7 @@ const Favorites = () => {
                 <title>Favorites</title>
             </Helmet>
             <Filter/>
-            <CarsList cars={favorites} />
+            <CarsList cars={ isFiltred ? filtredFavorites : favorites} />
         </main>
     )
 };

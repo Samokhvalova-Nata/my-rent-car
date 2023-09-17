@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 export const Header = styled.header`
   display: flex;
   height: 20px;
-  // background-color: var(--secondary-text-color);
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -23,13 +22,14 @@ export const Link = styled(NavLink)`
   color: black;
   font-size: 18px;
   font-weight: 600;
+  transition: transform var(--transition);
 
   &.active {
     color: var(--accent-color);
   }
-  transition: transform var(--transition);
-    &:hover,
-    &:focus {
-        transform: scale(1.05);
+
+  &:hover,
+  &:focus {
+      transform: scale(1.05);
     }
 `;

@@ -10,7 +10,7 @@ export const Container = styled.div`
 export const Forma = styled.form`
     display: flex;
     gap: 18px;
-        align-items: center;
+    align-items: center;
 `;
 
 export const Label = styled.label`

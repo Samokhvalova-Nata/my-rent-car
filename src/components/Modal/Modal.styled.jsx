@@ -10,6 +10,7 @@ export const Overlay = styled.div`
     justify-content: center;
     align-items: center;
     background-color: var( --secondary-text-color);
+    overflow: auto;
 `;
 
 export const ModalStyled = styled.div`
@@ -19,6 +20,14 @@ export const ModalStyled = styled.div`
     padding: 40px;
     position: relative;
 `;
+
+export const iconStyles = {
+    position: 'absolute',
+    stroke: 'transparent',
+    fill: '#121417',
+    top: 16,
+    right: 16,
+};
 
 export const Image = styled.img`
     width: 100%;
@@ -75,10 +84,7 @@ export const DetailsItem = styled.li`
 `;
 
 export const Description = styled.p`
-    // font-weight: 400;
-    // font-size: 14px;
     line-height: 1.43;
-    // color: var(--primary-text-color);
     margin-top: 14px;
     width: 461px;
 `;

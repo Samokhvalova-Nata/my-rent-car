@@ -1,28 +1,31 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from "react-helmet";
-import { CarsList } from "../../components/CarsList/CarsList";
-import { selectIsLoading, selectError, selectCars, selectFiltredCars } from '../../redux/selectors';
-import { Loader } from '../../components/Loader/Loader';
-import { getAllCars } from '../../redux/operations';
 import { toast } from 'react-hot-toast';
-import { Button } from './Catalog.styled';
+import { resetFilter } from 'redux/filtersSlice';
+import { getAllCars } from 'redux/operations';
+import { selectIsLoading, selectError, selectCars, selectFiltredCars, selectIsFiltred } from 'redux/selectors';
+import { CarsList } from 'components/CarsList';
 import { Filter } from 'components/Filter';
+import { Loader } from 'components/Loader';
+import { Button } from './Catalog.styled';
 
 
 const Catalog = () => {
-    const dispatch = useDispatch();
-    const cars = useSelector(selectCars);
-    const filtredCars = useSelector(selectFiltredCars);
-    const loading = useSelector(selectIsLoading);
-    const error = useSelector(selectError);
     const [page, setPage] = useState(1);
     const [isBtnShown, setIsBtnShown] = useState(true);
+    const cars = useSelector(selectCars);
+    const error = useSelector(selectError);
+    const loading = useSelector(selectIsLoading);
+    const isFiltred = useSelector(selectIsFiltred);
+    const filtredCars = useSelector(selectFiltredCars);
+    const dispatch = useDispatch();
 
     const arrayForRender = filtredCars ? filtredCars : cars;
 
     useEffect(() => {
         dispatch(getAllCars(page));
+        dispatch(resetFilter());
     }, [dispatch, page]);  
 
     useEffect(() => {
@@ -43,8 +46,8 @@ const Catalog = () => {
             {error && toast.error('Ooops!..Something went wro ng. Try to reload page')}
             {loading && !error && <Loader />}
             <Filter/>
-            <CarsList cars={arrayForRender} />
-            {isBtnShown && !loading &&
+            <CarsList cars={isFiltred ? filtredCars : cars} />
+            {isBtnShown && !loading && !filtredCars &&
                 <Button onClick={handleLoadMoreClick}>Load more</Button>
             }
         </main>

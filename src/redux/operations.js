@@ -17,3 +17,16 @@ export const getAllCars = createAsyncThunk(
         }
     }
 );
+
+
+export const getCars = createAsyncThunk(
+    "cars/getCars",
+    async (_, thunkAPI) => {
+        try {
+        const response = await axios.get("/adverts");
+        return response.data;
+        } catch (e) {
+        return thunkAPI.rejectWithValue(e.message);
+        }
+    }
+);

@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { AdvantagesItem, AdvantagesList, AdvantagesSection, AdvantagesText, Button, Description, ReasonSection, ReasonsItem, ReasonsList, ReasonsText, ReasonsTitle, ReasonsWrap, Section, Title } from "./Home.styled";
 import { ReactComponent as CarIcon } from '../../images/car_rent.svg';
 import { ReactComponent as SupportIcon } from '../../images/headset.svg';
 import { ReactComponent as PriceIcon } from '../../images/price.svg';
 import { ReactComponent as InsuranceIcon } from '../../images/insurance.svg'
-
+import { AdvantagesItem, AdvantagesList, AdvantagesSection, AdvantagesText, Button, Description, ReasonSection, ReasonsItem, ReasonsList, ReasonsText, ReasonsTitle, ReasonsWrap, SectionHero, Title } from "./Home.styled";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -19,11 +18,11 @@ const Home = () => {
             <Helmet>
                 <title>Home</title>
             </Helmet>
-            <Section>
+            <SectionHero>
                 <Title>Where Your Journey Begins!</Title>
                 <Description>You can easily make a request and rent a car in Ukraine – just choose car in catalog and contact us. Do not miss the unique chance to inexpensively rent a car of the class you need!</Description>
                 <Button onClick={handleStart}>Get started</Button>
-            </Section>
+            </SectionHero>
             <ReasonSection>
                 <ReasonsTitle>Reasons to rent a car with us</ReasonsTitle>
                 <ReasonsList>

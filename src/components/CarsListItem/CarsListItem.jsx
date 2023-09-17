@@ -1,22 +1,13 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorites } from 'redux/selectors';
+import { addFavorite, deleteFavorite } from 'redux/favoriteSlice';
+import { Modal } from 'components/Modal';
 import { ReactComponent as FavoriteIcon } from '../../images/favorite.svg';
 import { ReactComponent as FavoriteActiveIcon } from '../../images/favorite-active.svg';
-import { Button, Image, Title, Item, Span, TitleWrap, DetailsItem, DetailsList, InfoWrap } from "./CarsListItem.styled";
-import { Modal } from 'components/Modal';
-import { addFavorite, deleteFavorite } from 'redux/favoriteSlice';
-import { selectFavorites } from 'redux/selectors';
+import { Button, Image, Title, Item, Span, TitleWrap, DetailsItem, DetailsList, InfoWrap, iconStyles } from "./CarsListItem.styled";
 
 const DEFAULT_URL = "../../images/no-image.jpg";
-
-const iconStyles = {
-    position: 'absolute',
-    stroke: '#3470FF',
-    fill: 'transparent',
-    top: 14,
-    right: 14,
-    cursor: 'pointer',
-};
 
 export const CarsListItem = ({
         id,
@@ -32,9 +23,8 @@ export const CarsListItem = ({
         img
 }) => {
     const favorites = useSelector(selectFavorites);
-    const dispatch = useDispatch();
     const [isShowModal, setIsShowModal] = useState(false);
-
+    const dispatch = useDispatch();
 
     const toggleModal = () => setIsShowModal(prev => !prev);
 

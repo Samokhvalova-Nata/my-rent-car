@@ -1,20 +1,12 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Overlay, ModalStyled, InfoWrap, Image, TitleWrap, Title, Span, DetailsList, DetailsItem, Description, InfoTitle, ConditionItem, ConditionList, SpanCondition, Button } from './Modal.styled';
 import { useSelector } from "react-redux";
 import { selectCars } from "redux/selectors";
-import { ReactComponent as CloseIcon } from '../../images/close.svg';
 import { getAge } from "utils";
+import { ReactComponent as CloseIcon } from '../../images/close.svg';
+import { Overlay, ModalStyled, InfoWrap, Image, TitleWrap, Title, Span, DetailsList, DetailsItem, Description, InfoTitle, ConditionItem, ConditionList, SpanCondition, Button, iconStyles } from './Modal.styled';
 
 const modalRoot = document.getElementById('modal-root');
-
-const iconStyles = {
-    position: 'absolute',
-    stroke: 'transparent',
-    fill: '#121417',
-    top: 16,
-    right: 16,
-};
 
 export const Modal = ({ carId, onClose }) => {
     const cars = useSelector(selectCars);
