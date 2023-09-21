@@ -15,8 +15,6 @@ const optionsPrice = Array.from({ length: 38 }, (_, index) => ({
     label: String((index + 3) * 10)
 }));
 
-console.log('optionsPriceList', optionsPrice)
-
 export const Filter = () => {
     const dispatch = useDispatch();
     const selectBrandRef = useRef(null);

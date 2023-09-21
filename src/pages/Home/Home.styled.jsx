@@ -26,7 +26,6 @@ export const Title = styled.h1`
 
 export const Description = styled.p`
     width: 450px;
-    text-align: left;
     margin-bottom: 25px;
     font-size: 16px;
     color: var( --text-button-color);

@@ -9,6 +9,7 @@ import { CarsList } from 'components/CarsList';
 import { Filter } from 'components/Filter';
 import { Loader } from 'components/Loader';
 import { Button } from './Catalog.styled';
+import { NoFiltred } from 'components/NoFiltred';
 
 
 const Catalog = () => {
@@ -50,6 +51,7 @@ const Catalog = () => {
             {isBtnShown && !loading && !filtredCars &&
                 <Button onClick={handleLoadMoreClick}>Load more</Button>
             }
+            {filtredCars?.length === 0 && <NoFiltred/>}
         </main>
     )
 };

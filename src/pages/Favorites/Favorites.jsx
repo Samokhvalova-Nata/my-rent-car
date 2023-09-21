@@ -6,6 +6,8 @@ import { resetFilter } from "redux/filtersSlice";
 import { selectFavoriteCars, selectFiltredFavoriteCars, selectIsFiltred } from "redux/selectors";
 import { CarsList } from "components/CarsList";
 import { Filter } from "components/Filter";
+import { NoFavorites } from "components/NoFavorites";
+import { NoFiltred } from "components/NoFiltred";
 
 
 const Favorites = () => {
@@ -25,7 +27,10 @@ const Favorites = () => {
                 <title>Favorites</title>
             </Helmet>
             <Filter/>
-            <CarsList cars={ isFiltred ? filtredFavorites : favorites} />
+            {(favorites?.length || filtredFavorites?.length) ?
+            <CarsList cars={isFiltred ? filtredFavorites : favorites} />
+                : <NoFavorites />}
+            {filtredFavorites?.length === 0 && <NoFiltred/>}
         </main>
     )
 };
