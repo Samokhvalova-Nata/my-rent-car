@@ -44,14 +44,15 @@ const Catalog = () => {
             <Helmet>
                 <title>Catalog</title>
             </Helmet>
-            {error && toast.error('Ooops!..Something went wro ng. Try to reload page')}
+            {error && toast.error('Ooops!..Something went wrong. Try to reload page')}
             {loading && !error && <Loader />}
             <Filter/>
             <CarsList cars={isFiltred ? filtredCars : cars} />
-            {isBtnShown && !loading && !filtredCars &&
+            {isFiltred && filtredCars?.length === 0 && <NoFiltred/>}
+            {isBtnShown && !loading && !isFiltred &&
                 <Button onClick={handleLoadMoreClick}>Load more</Button>
             }
-            {filtredCars?.length === 0 && <NoFiltred/>}
+            
         </main>
     )
 };
