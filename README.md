@@ -17,18 +17,27 @@ Click link: [MyRentCar](https://samokhvalova-nata.github.io/my-rent-car/).
 ![Catalog page](/assets/images/catalog_filter.png)
 
 #### Load more
+
 The first page of the catalog displays 8 listings, and the rest of them - on clicking the 'Load more' button
 
 ![Button Load more](/assets/images/catalog_pagination.png)
 
 #### Learn more
+
 Clicking the 'Learn more' button opens a modal window with detailed information about the car and its rental terms
 
 ![Button Learn more](/assets/images/learn_more.png)
 
 ![Modal](/assets/images/car_info.png)
 
+#### Rent car
+
+Clicking the 'Rental car' button allows the user to contact the company by phone
+
+![Rent car](/assets/images/call_for_rent.png)
+
 #### Add to favorites
+
 Clicking the 'heart-shaped' icon on the listing card adds it to the favorites list.\
 In case of a repeated click on the 'heart-shaped' icon, the listing is removed from the favorites list, and the button's color reverts to its initial state.
 

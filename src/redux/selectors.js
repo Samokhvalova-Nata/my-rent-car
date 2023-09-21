@@ -21,26 +21,29 @@ export const selectFiltredCars = createSelector(
     selectFilterMileageTo,
     ],
     (allCars, filterBrand, filterPrice, filterMileageFrom, filterMileageTo) => {
-        if (
-            filterBrand !== ""
-            && filterPrice !== ""
-            && filterMileageFrom !== ''
-            && filterMileageTo !== '') {
+        const filteredCars = allCars.filter((car) => {
+            const carPriceToNum = parseInt(car.rentalPrice.replace("$", ""));
+            const filterPriceToNum = parseInt(filterPrice);
 
-            const normalizeFilterBrand = filterBrand.toLowerCase();
+            if (filterBrand && car.make.toLowerCase() !== filterBrand.toLowerCase()) {
+                return false;
+            }
 
-            const selectCarsByBrand = allCars.filter((car) =>
-                car.make.toLowerCase().includes(normalizeFilterBrand));
+            if (filterPrice && carPriceToNum > filterPriceToNum) {
+                return false;
+            }
 
-            const selectCarsByPrice = selectCarsByBrand.filter((car) =>
-                car.rentalPrice <= filterPrice);
+            if (
+                filterMileageFrom &&
+                filterMileageTo &&
+                (car.mileage < filterMileageFrom || car.mileage > filterMileageTo)
+            ) {
+                return false;
+            }
+            return true;
+        });
 
-            const selectCarsByMileage = selectCarsByPrice.filter((car) =>
-                car.mileage <= filterMileageTo &&
-                car.mileage >= filterMileageFrom);
-
-            return selectCarsByMileage;
-        }
+        return filteredCars;
     }
 );
 
