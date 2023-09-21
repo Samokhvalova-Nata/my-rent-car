@@ -45,7 +45,7 @@ export const CarsListItem = ({
                             onClick={() => handleRemoveFavorites(id)} />
                         : <FavoriteIcon width='18' height='18'
                         style={iconStyles} onClick={() => handleAddFavorites(id)} />}
-                    <Image src={img ? img : DEFAULT_URL} alt={make} loading="lazy" />
+                    <Image src={img ? img : DEFAULT_URL} alt={make} loading="lazy" width='274'/>
                     <TitleWrap>
                         <Title>{make} <Span>{model}, </Span>{year}</Title>
                         <p>{rentalPrice}</p>
