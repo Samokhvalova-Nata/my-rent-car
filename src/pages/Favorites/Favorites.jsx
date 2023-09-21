@@ -30,7 +30,7 @@ const Favorites = () => {
             {(favorites?.length || filtredFavorites?.length) ?
             <CarsList cars={isFiltred ? filtredFavorites : favorites} />
                 : <NoFavorites />}
-            {filtredFavorites?.length === 0 && <NoFiltred/>}
+            {isFiltred && filtredFavorites?.length === 0 && <NoFiltred/>}
         </main>
     )
 };

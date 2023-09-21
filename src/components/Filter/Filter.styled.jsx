@@ -110,4 +110,8 @@ export const Button = styled.button`
     &:hover,
     &:focus {
         background-color: var(--hover-color);
+    }
+    :disabled {
+        background-color: var(--text-filter-title-color);
+    }
 `;

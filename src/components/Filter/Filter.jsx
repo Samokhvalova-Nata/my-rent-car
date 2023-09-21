@@ -1,8 +1,8 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
 import { getAllCars } from "redux/operations";
-import { updateFilter } from "redux/filtersSlice";
+import { resetFilter, updateFilter } from "redux/filtersSlice";
 import { SelectInput } from "components/Select/Select";
 import { transformSelectData } from "utils";
 import brandList from "data/brands.json"
@@ -17,6 +17,7 @@ const optionsPrice = Array.from({ length: 38 }, (_, index) => ({
 
 export const Filter = () => {
     const dispatch = useDispatch();
+    const [isReset, setIsReset] = useState(true);
     const selectBrandRef = useRef(null);
     const selectPriceRef = useRef(null);
 
@@ -40,7 +41,13 @@ export const Filter = () => {
         form.reset();
         selectBrandRef.current.clearValue();
         selectPriceRef.current.clearValue();
+        setIsReset(false);
     };
+    
+    const handleResetClick = () => {
+        dispatch(resetFilter());
+        setIsReset(true);
+    }
 
     return (
         <Container>
@@ -85,6 +92,7 @@ export const Filter = () => {
                     </Label>
                 </InputMileageWrap>
                 <Button type='submit'>Search</Button>
+                <Button type= 'button' disabled={isReset} onClick={handleResetClick}>Reset</Button>
             </Forma>
         </Container>
     )
