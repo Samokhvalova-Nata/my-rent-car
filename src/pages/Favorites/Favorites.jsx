@@ -26,11 +26,14 @@ const Favorites = () => {
             <Helmet>
                 <title>Favorites</title>
             </Helmet>
-            <Filter/>
-            {(favorites?.length || filtredFavorites?.length) ?
-            <CarsList cars={isFiltred ? filtredFavorites : favorites} />
-                : <NoFavorites />}
-            {isFiltred && filtredFavorites?.length === 0 && <NoFiltred/>}
+            {favorites.length === 0
+                ? <NoFavorites />
+                : (<>
+                    <Filter />
+                    <CarsList cars={isFiltred ? filtredFavorites : favorites}/>
+                    {isFiltred && filtredFavorites?.length === 0 && <NoFiltred />}
+                </>)
+            }
         </main>
     )
 };

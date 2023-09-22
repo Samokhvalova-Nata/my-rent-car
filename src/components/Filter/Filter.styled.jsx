@@ -11,6 +11,7 @@ export const Forma = styled.form`
     display: flex;
     gap: 18px;
     align-items: center;
+    justify-content: center;
 `;
 
 export const Label = styled.label`
@@ -115,3 +116,12 @@ export const Button = styled.button`
         background-color: var(--text-filter-title-color);
     }
 `;
+
+export const InputResetWrap = styled.div`
+    display: flex;
+    margin-top: 10px;
+`;
+export const iconStyles = {
+    fill: 'var(--hover-color)',
+    cursor: 'pointer',
+};

@@ -22,18 +22,29 @@ const Catalog = () => {
     const filtredCars = useSelector(selectFiltredCars);
     const dispatch = useDispatch();
 
-    const arrayForRender = filtredCars ? filtredCars : cars;
+    const arrayForRender = isFiltred ? filtredCars : cars;
 
     useEffect(() => {
         dispatch(getCarsByPage(page));
         dispatch(resetFilter());
+        setIsBtnShown(true);
     }, [dispatch, page]); 
 
     useEffect(() => {
         if (arrayForRender.length === 36) {
             setIsBtnShown(false)
         }
-    },[arrayForRender.length])
+    }, [arrayForRender.length]);
+
+    useEffect(() => {
+    const height = 426;
+    if (cars.length > 8) {
+        window.scrollBy({
+            top: height * 1.5,
+            behavior: 'smooth',
+        });
+    }
+    }, [cars]);
 
     const handleLoadMoreClick = () => {
         setPage(page => page + 1)

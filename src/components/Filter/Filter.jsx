@@ -1,12 +1,13 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
 import { getAllCars } from "redux/operations";
 import { resetFilter, updateFilter } from "redux/filtersSlice";
 import { SelectInput } from "components/Select/Select";
 import { transformSelectData } from "utils";
-import brandList from "data/brands.json"
-import { Button, Container, Forma, InputBrandWrap, InputMileageFrom, InputMileageText, InputMileageTo, InputMileageWrap, InputPriceWrap, Label } from "./Filter.styled";
+import brandList from "data/brands.json";
+import { ReactComponent as ResetIcon } from '../../images/reset.svg';
+import { Button, Container, Forma, InputBrandWrap, InputMileageFrom, InputMileageText, InputMileageTo, InputMileageWrap, InputPriceWrap, InputResetWrap, Label, iconStyles } from "./Filter.styled";
 
 const optionsBrand = transformSelectData(brandList);
 
@@ -17,7 +18,6 @@ const optionsPrice = Array.from({ length: 38 }, (_, index) => ({
 
 export const Filter = () => {
     const dispatch = useDispatch();
-    const [isReset, setIsReset] = useState(true);
     const selectBrandRef = useRef(null);
     const selectPriceRef = useRef(null);
 
@@ -41,12 +41,10 @@ export const Filter = () => {
         form.reset();
         selectBrandRef.current.clearValue();
         selectPriceRef.current.clearValue();
-        setIsReset(false);
     };
     
     const handleResetClick = () => {
         dispatch(resetFilter());
-        setIsReset(true);
     }
 
     return (
@@ -92,7 +90,10 @@ export const Filter = () => {
                     </Label>
                 </InputMileageWrap>
                 <Button type='submit'>Search</Button>
-                <Button type= 'button' disabled={isReset} onClick={handleResetClick}>Reset</Button>
+                <InputResetWrap>
+                <ResetIcon width='24' height='24'
+                        style={iconStyles} onClick={handleResetClick}/>
+                </InputResetWrap>
             </Forma>
         </Container>
     )
