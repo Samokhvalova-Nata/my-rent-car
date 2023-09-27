@@ -6,7 +6,7 @@ import { resetFilter, updateFilter } from "redux/filtersSlice";
 import { SelectInput } from "components/Select/Select";
 import { transformSelectData } from "utils";
 import brandList from "data/brands.json";
-import { ReactComponent as ResetIcon } from '../../images/reset.svg';
+import { ReactComponent as ResetIcon } from '../../images/icons.js/reset.svg';
 import { Button, Container, Forma, InputBrandWrap, InputMileageFrom, InputMileageText, InputMileageTo, InputMileageWrap, InputPriceWrap, InputResetWrap, Label, iconStyles } from "./Filter.styled";
 
 const optionsBrand = transformSelectData(brandList);

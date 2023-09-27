@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { ReactComponent as CarIcon } from '../../images/car_rent.svg';
-import { ReactComponent as SupportIcon } from '../../images/headset.svg';
-import { ReactComponent as PriceIcon } from '../../images/price.svg';
-import { ReactComponent as InsuranceIcon } from '../../images/insurance.svg'
+import { ReactComponent as CarIcon } from '../../images/icons/car_rent.svg';
+import { ReactComponent as SupportIcon } from '../../images/icons/headset.svg';
+import { ReactComponent as PriceIcon } from '../../images/icons/price.svg';
+import { ReactComponent as InsuranceIcon } from '../../images/icons/insurance.svg'
 import { AdvantagesItem, AdvantagesList, AdvantagesSection, AdvantagesText, Button, Description, ReasonSection, ReasonsItem, ReasonsList, ReasonsText, ReasonsTitle, ReasonsWrap, SectionHero, Title } from "./Home.styled";
 
 const Home = () => {

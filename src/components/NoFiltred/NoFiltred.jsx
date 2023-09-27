@@ -1,4 +1,4 @@
-import noResultsFound from '../../images/No_results_found.jpg';
+import noResultsFound from '../../images/backgrounds/No_results_found.jpg';
 import { Container, Text } from './NoFiltred.styled';
 
 

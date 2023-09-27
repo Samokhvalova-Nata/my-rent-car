@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { useSelector } from "react-redux";
 import { selectCars } from "redux/selectors";
 import { getAge } from "utils";
-import { ReactComponent as CloseIcon } from '../../images/close.svg';
+import { ReactComponent as CloseIcon } from '../../images/icons/close.svg';
 import { Overlay, ModalStyled, InfoWrap, Image, TitleWrap, Title, Span, DetailsList, DetailsItem, Description, InfoTitle, ConditionItem, ConditionList, SpanCondition, Button, iconStyles } from './Modal.styled';
 
 const modalRoot = document.getElementById('modal-root');

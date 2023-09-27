@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import noResultsFound from '../../images/No_results_found.jpg';
+import noResultsFound from '../../images/backgrounds/No_results_found.jpg';
 import { Button, Container, Text } from './NoFavorites.styled';
 import { useSelector } from 'react-redux';
 import { selectIsLoading } from 'redux/selectors';

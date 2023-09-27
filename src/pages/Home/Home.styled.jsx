@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Image from "../../images/bg-hero-second.jpg";
+import Image from "../../images/backgrounds/bg-hero-second.jpg";
 
 export const SectionHero = styled.section`
     max-width: 1600px;

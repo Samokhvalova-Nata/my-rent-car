@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorites } from 'redux/selectors';
 import { addFavorite, deleteFavorite } from 'redux/favoriteSlice';
 import { Modal } from 'components/Modal';
-import { ReactComponent as FavoriteIcon } from '../../images/favorite.svg';
-import { ReactComponent as FavoriteActiveIcon } from '../../images/favorite-active.svg';
+import { ReactComponent as FavoriteIcon } from '../../images/icons/favorite.svg';
+import { ReactComponent as FavoriteActiveIcon } from '../../images/icons/favorite-active.svg';
 import { Button, Image, Title, Item, Span, TitleWrap, DetailsItem, DetailsList, InfoWrap, iconStyles } from "./CarsListItem.styled";
 
 const DEFAULT_URL = "../../images/no-image.jpg";
