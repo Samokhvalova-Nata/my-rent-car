@@ -34,9 +34,11 @@ export const Modal = ({ carId, onClose }) => {
             if (e.code === 'Escape') onClose();
         };
         window.addEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = 'hidden';
 
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
+            document.body.style.overflow = 'visible';
         };
     }, [onClose]);
 
@@ -48,7 +50,7 @@ export const Modal = ({ carId, onClose }) => {
         <Overlay onClick={handleClickBackdrop}>
             <ModalStyled>
                 <CloseIcon style={iconStyles} onClick={onClose}/>
-                <Image src={img} alt={make} loading="lazy" />
+                <Image src={img} alt={make} loading="lazy"  width="469" height="314"/>
                 <InfoWrap>
                     <TitleWrap>
                         <Title>{make} <Span>{model}, </Span>{year}</Title>

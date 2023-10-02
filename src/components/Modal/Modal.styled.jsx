@@ -7,7 +7,6 @@ export const Overlay = styled.div`
     width: 100vw;
     height: 100vh;
     background-color: var( --secondary-text-color);
-    overflow: auto;
 `;
 
 export const ModalStyled = styled.div`
@@ -18,8 +17,10 @@ export const ModalStyled = styled.div`
 
     border-radius: 14px;
     background-color: var(--text-button-color);
-    width: calc(100% - 20px);
     padding: 30px;
+    width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+    overflow: auto;
 
     @media screen and (min-width: 480px) {
         width: 450px;
@@ -29,6 +30,7 @@ export const ModalStyled = styled.div`
     @media screen and (min-width: 768px) {
         width: 541px;
         padding: 34px;
+        max-height: 830px;
     }
 `;
 

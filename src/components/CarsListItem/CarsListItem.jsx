@@ -7,7 +7,7 @@ import { ReactComponent as FavoriteIcon } from '../../images/icons/favorite.svg'
 import { ReactComponent as FavoriteActiveIcon } from '../../images/icons/favorite-active.svg';
 import { Button, Image, Title, Item, Span, TitleWrap, DetailsItem, DetailsList, InfoWrap, iconStyles } from "./CarsListItem.styled";
 
-const DEFAULT_URL = "../../images/no-image.jpg";
+const DEFAULT_URL = "../../images/backgrounds/no-image.jpg";
 
 export const CarsListItem = ({
         id,

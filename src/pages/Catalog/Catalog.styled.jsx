@@ -15,7 +15,11 @@ export const Button = styled.button`
     text-decoration: underline;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     cursor: pointer;
     background-color: transparent;
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 150px;
+    }
 `;

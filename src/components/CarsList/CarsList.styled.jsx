@@ -27,5 +27,9 @@ export const List = styled.ul`
     row-gap: 50px;
     column-gap: 29px;
     padding-top: 50px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
+
+    @media screen and (min-width: 768px) {
+        padding-bottom: 100px;
+    }
 `;
