@@ -5,14 +5,14 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    // outline: 2px solid tomato;
 
     max-width: 100%;
-    padding-top: 25px;
     padding-left: 25px;
     padding-right: 25px;
+    padding-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
-    outline: 2px solid tomato;
 
     @media screen and (min-width: 480px) {
         max-width: 480px;
