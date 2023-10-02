@@ -6,7 +6,7 @@ export const NoFiltred = () => {
     return (
         <Container>
             <img src={noResultsFound} alt="No results found" width="400" />
-            <Text>Sorry, there are no results. Try to search something else</Text>
+            <Text>Sorry, there are no results. <br/>Try to search something else</Text>
         </Container>
     )
 };

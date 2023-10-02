@@ -4,7 +4,8 @@ import TabletImage from "../../images/backgrounds/hero-red-car-tablet.jpg"
 import DesktopImage from "../../images/backgrounds/hero-red-car-desktop.jpg";
 
 export const SectionHero = styled.section`
-    box-sizing: border-box;
+    // display: flex;
+
     max-width: 100%;
     height: 400px;
     padding: 60px 20px;

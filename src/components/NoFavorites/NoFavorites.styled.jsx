@@ -5,15 +5,38 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    max-width: 100%;
     padding-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 2px solid tomato;
+
+    @media screen and (min-width: 480px) {
+        max-width: 480px;
+    } 
+
+    @media screen and (min-width: 768px) {
+        max-width: 768px;
+    }    
+
+    @media screen and (min-width: 1200px) {
+        max-width: 1200px;
+    }
 `;
 
 export const Text = styled.p`
     margin-top: 50px;
     margin-bottom: 25px;
-    font-size: 16px;
     color: var(--primary-text-color);
     text-align: center;
+    font-size: 14px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 16px;
+    }
 `;
 
 export const Button = styled.button`

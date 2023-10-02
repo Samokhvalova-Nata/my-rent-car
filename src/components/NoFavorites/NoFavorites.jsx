@@ -15,7 +15,7 @@ export const NoFavorites = () => {
             : 
             <Container>
                 <img src={noResultsFound} alt="No results found" width="400" />
-                <Text>Sorry, you have no favorites. Go to catalog and choose cars you like</Text>
+                <Text>Sorry, you have no favorites. <br/>Go to catalog and choose cars you like</Text>
                 <Button onClick={() => navigate('/catalog')}>See catalog</Button>
             </Container>
         }

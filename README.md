@@ -47,11 +47,11 @@ In case of a repeated click on the 'heart-shaped' icon, the listing is removed f
 
 - "/favorites" - a page with listings that have been added to the user's favorites.
 
-![Favorite page](/assets/images/favotites.png)
+![Favorite page](/assets/images/favorites.png)
 
 If no listings have been added to the favorites list, a button to return to the catalog appears:
 
-![No Favorites](/assets/images/no_favotites.png)
+![No Favorites](/assets/images/no_favorites.png)
 
 ## For start use command:
 
