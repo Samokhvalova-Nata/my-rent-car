@@ -1,9 +1,10 @@
 import { CarsListItem } from 'components/CarsListItem';
-import { List } from './CarsList.styled';
+import { Container, List } from './CarsList.styled';
 
 
 export const CarsList = ({cars}) => {
     return (
+        <Container>
         <List>
             {cars.map(({  id, make, model, year, rentalPrice, address, rentalCompany, type, accessories, mileage, img }) => (
                 <CarsListItem
@@ -22,5 +23,6 @@ export const CarsList = ({cars}) => {
                 />
             ))}
         </List>
+        </Container>
     );
 };

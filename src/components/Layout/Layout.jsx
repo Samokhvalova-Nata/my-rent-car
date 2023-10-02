@@ -2,18 +2,22 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import Loader from "../Loader/Loader";
-import { Header, Link } from "./Layout.styled";
+import { Container, Header, Link, LogoAccent, Nav } from "./Layout.styled";
 
 
 const Layout = () => {
     return (
         <>
             <Header>
-                <nav>
-                    <Link to="/">Home</Link>
-                    <Link to="/catalog">Catalog</Link>
-                    <Link to="/favorites">Favorites</Link>
-                </nav>
+                <Container>
+                    <Nav>
+                        <Link to="/">MyRent
+                            <LogoAccent>Car</LogoAccent>
+                        </Link>
+                        <Link to="/catalog">Catalog</Link>
+                        <Link to="/favorites">Favorites</Link>
+                    </Nav>
+                </Container>
             </Header>
             <Suspense fallback={<Loader/>}>
                 <Outlet/>

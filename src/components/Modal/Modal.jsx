@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { useSelector } from "react-redux";
 import { selectCars } from "redux/selectors";
 import { getAge } from "utils";
+
 import { ReactComponent as CloseIcon } from '../../images/icons/close.svg';
 import { Overlay, ModalStyled, InfoWrap, Image, TitleWrap, Title, Span, DetailsList, DetailsItem, Description, InfoTitle, ConditionItem, ConditionList, SpanCondition, Button, iconStyles } from './Modal.styled';
 
@@ -46,9 +47,8 @@ export const Modal = ({ carId, onClose }) => {
     return createPortal(
         <Overlay onClick={handleClickBackdrop}>
             <ModalStyled>
-                <CloseIcon width='24' height='24'
-                        style={iconStyles} onClick={onClose}/>
-                    <Image src={img} alt={make} loading="lazy" />
+                <CloseIcon style={iconStyles} onClick={onClose}/>
+                <Image src={img} alt={make} loading="lazy" />
                 <InfoWrap>
                     <TitleWrap>
                         <Title>{make} <Span>{model}, </Span>{year}</Title>

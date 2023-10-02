@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
-import { Container } from './App.styled';
+// import { Container } from './App.styled';
 import Layout from '../Layout/Layout';
 
 const Home = lazy(() => import("../../pages/Home/Home"));
@@ -9,7 +9,7 @@ const Favorites = lazy(() => import("../../pages/Favorites/Favorites"));
 
 const App = () => {
   return (
-    <Container>
+    // <Container>
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route index element={<Home />} />
@@ -18,7 +18,7 @@ const App = () => {
           <Route path='*' element={<Home />} />
         </Route>
       </Routes>
-    </Container>
+    // </Container>
   );
 };
 

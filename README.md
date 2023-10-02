@@ -8,7 +8,7 @@ Click link: [MyRentCar](https://samokhvalova-nata.github.io/my-rent-car/).
 
 - "/" - the homepage with a general description of the services provided by the company.
 
-![Main page](/assets/images/main.png)
+![Main page](/assets/images/main3.png)
 
 ### Catalog
 

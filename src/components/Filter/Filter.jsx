@@ -7,7 +7,7 @@ import { SelectInput } from "components/Select/Select";
 import { transformSelectData } from "utils";
 import brandList from "data/brands.json";
 import { ReactComponent as ResetIcon } from '../../images/icons/reset.svg';
-import { Button, Container, Forma, InputBrandWrap, InputMileageFrom, InputMileageText, InputMileageTo, InputMileageWrap, InputPriceWrap, InputResetWrap, Label, iconStyles } from "./Filter.styled";
+import { Button, ButtonWrap, Container, Forma, InputBrandWrap, InputMileageFrom, InputMileageText, InputMileageTo, InputMileageWrap, InputPriceWrap, InputResetWrap, Label, SelectWrap, iconStyles } from "./Filter.styled";
 
 const optionsBrand = transformSelectData(brandList);
 
@@ -50,24 +50,27 @@ export const Filter = () => {
     return (
         <Container>
             <Forma onSubmit={handleSubmitForm}>
-                <Label>Car brand
-                    <InputBrandWrap>
-                        <SelectInput
-                            name={'brand'}
-                            options={optionsBrand}
-                            refProp={selectBrandRef}
-                            placeholder={'Enter the text'} />
-                    </InputBrandWrap>
-                </Label>
-                <Label>Price/ 1 hour
-                    <InputPriceWrap>
-                        <SelectInput
-                            name={'price'}
-                            options={optionsPrice}
-                            refProp={selectPriceRef}
-                            placeholder={'To $'} />
-                    </InputPriceWrap>
-                </Label>
+
+                <SelectWrap>
+                    <Label>Car brand
+                        <InputBrandWrap>
+                            <SelectInput
+                                name={'brand'}
+                                options={optionsBrand}
+                                refProp={selectBrandRef}
+                                placeholder={'Enter the text'} />
+                        </InputBrandWrap>
+                    </Label>
+                    <Label>Price/ 1 hour
+                        <InputPriceWrap>
+                            <SelectInput
+                                name={'price'}
+                                options={optionsPrice}
+                                refProp={selectPriceRef}
+                                placeholder={'To $'} />
+                        </InputPriceWrap>
+                    </Label>
+                </SelectWrap>
                 <InputMileageWrap>
                     <Label>Сar mileage / km
                         <InputMileageText>From</InputMileageText>
@@ -89,11 +92,15 @@ export const Filter = () => {
                             title="Enter a number from 4001 to 7000" />
                     </Label>
                 </InputMileageWrap>
-                <Button type='submit'>Search</Button>
-                <InputResetWrap>
-                <ResetIcon width='24' height='24'
-                        style={iconStyles} onClick={handleResetClick}/>
-                </InputResetWrap>
+
+                <ButtonWrap>
+                    <Button type='submit'>Search</Button>
+                    <InputResetWrap>
+                        <ResetIcon width='24' height='24'
+                            style={iconStyles} onClick={handleResetClick}/>
+                    </InputResetWrap>
+                </ButtonWrap>
+
             </Forma>
         </Container>
     )

@@ -1,35 +1,68 @@
 import styled from '@emotion/styled';
-import Image from "../../images/backgrounds/bg-hero-second.jpg";
+import MobileImage from "../../images/backgrounds/hero-red-car-mobile.jpg";
+import TabletImage from "../../images/backgrounds/hero-red-car-tablet.jpg"
+import DesktopImage from "../../images/backgrounds/hero-red-car-desktop.jpg";
 
 export const SectionHero = styled.section`
-    max-width: 1600px;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: 400px;
+    padding: 60px 20px;
+
     margin-left: auto;
     margin-right: auto;
-    padding-top: 120px;
-    padding-bottom: 120px;
-    padding-left: 50px;
     text-align: left;
+
     background-color: var(--borders-color);
+    background-image: var(--grad), url(${MobileImage});
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(${Image});
+    background-position: center;
+
+    @media screen and (min-width: 480px) {
+        max-width: 480px;
+        padding: 70px 35px;
+        background-image: var(--grad), url(${TabletImage});
+    }
+
+    @media screen and (min-width: 768px) {
+        max-width: 768px;
+        padding: 100px 60px;
+        background-image: var(--grad), url(${DesktopImage});
+    }
+
+    @media screen and (min-width: 1200px) {
+        max-width: 1600px;
+        height: 600px;
+        padding: 180px 180px;
+    }
 `;
 
 export const Title = styled.h1`
     margin-right: auto;
     margin-left: auto;
-    text-align: left;
     margin-bottom: 15px;
-    font-size: 30px;
     color: var( --text-button-color);
+    font-size: 24px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 32px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        font-size: 38px;
+    }
 `;
 
 export const Description = styled.p`
-    width: 450px;
+    max-width: 450px;
     margin-bottom: 25px;
-    font-size: 16px;
     color: var( --text-button-color);
-    text-align: left;
+    font-size: 14px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 16px;
+    }
 `;
 
 export const Button = styled.button`
@@ -54,25 +87,63 @@ export const ReasonSection = styled.section`
     margin-top: 50px;
 `;
 
-export const ReasonsTitle = styled.h2`
-    margin-right: auto;
+export const Container = styled.div`
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-left: auto;
-    text-align: center;
+    margin-right: auto;
+    // outline: 2px solid tomato;
+
+    @media screen and (min-width: 480px) {
+        max-width: 480px;
+    } 
+
+    @media screen and (min-width: 768px) {
+        max-width: 768px;
+    }    
+
+    @media screen and (min-width: 1200px) {
+        max-width: 1200px;
+    }
+`;
+
+export const ReasonsTitle = styled.h2`
     margin-bottom: 30px;
+    text-align: center;
     text-transform: uppercase;
-    font-size: 20px;
     color: var(--primary-text-color);
+    font-size: 16px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 18px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        font-size: 20px;
+    }
 `;
 
 export const ReasonsList = styled.ul`
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
-    align-items: center;
-    justify-content: center;
+    
+    // align-items: center;
+    // justify-content: center;
 `;
 
 export const ReasonsItem = styled.li`
-    flex-basis: calc((100% - 3 * 30) / 4);
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+        width: calc((100% - 30px) / 2);
+    }
+
+    @media screen and (min-width: 1200px) {
+        flex-basis: calc((100% - 3 * 30px) / 4);
+    }
+}
 `;
 
 export const ReasonsWrap = styled.div`
@@ -80,7 +151,10 @@ export const ReasonsWrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 260px;
+
+    // width: 260px;
+    // height: 180px;
+    max-width: 100%;
     height: 180px;
     border-radius: 4px;
     padding: 0 15px 0;

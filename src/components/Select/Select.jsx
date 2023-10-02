@@ -9,12 +9,15 @@ const customStyles = {
         backgroundColor: 'var(--input-color)',
         borderRadius: '14px',
         borderColor: state.isSelected ? 'transparent' : 'transparent',
-        fontSize: '18px',
+        fontSize: '16px',
         fontWeight: '500',
         lineHeight: '1.1',
         '&:hover': {
             borderColor: 'var(--input-border-hover-color)',
         },
+        "@media screen and (min-width: 768px)": {
+        fontSize: '18px',
+    }
     }),
     option: (provided, state) => ({
         ...provided,
@@ -22,10 +25,13 @@ const customStyles = {
         paddingBottom: '8px',
         backgroundColor: state.isSelected ? 'var(--accent-color)' : 'white',
         color: state.isSelected ? 'white' : 'var(--text-filter-options-color)',
-        fontSize: '16px',
+        fontSize: '14px',
         fontWeight: '500',
         lineHeight: '1.25',
         cursor: 'pointer',
+        "@media screen and (min-width: 768px)": {
+            fontSize: '16px',
+        }
     }),
     dropdownIndicator: (provided, state) => ({
         ...provided,
@@ -41,9 +47,12 @@ const customStyles = {
         ...provided,
         backgroundColor: 'var(--input-color)',
         color: 'var(--primary-text-color)',
-        fontSize: '18px',
+        fontSize: '16px',
         fontWeight: '500',
         lineHeight: '1.11',
+        "@media screen and (min-width: 768px)": {
+            fontSize: '18px',
+        }
     }),
     menu: provided => ({
         ...provided,

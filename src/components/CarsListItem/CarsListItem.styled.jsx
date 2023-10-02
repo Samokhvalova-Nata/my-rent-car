@@ -1,7 +1,15 @@
 import styled from '@emotion/styled';
 
 export const Item = styled.li`
-    flex-basis: calc((100% - 3 * (29px)) / 4); 
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        width: calc((100% - 29px) / 2);
+    }
+
+    @media screen and (min-width: 1200px) {
+        flex-basis: calc((100% - 3 * 29px) / 4);
+    }
+
     position: relative;
     display: flex;
     flex-direction: column;

@@ -4,7 +4,7 @@ import { ReactComponent as CarIcon } from '../../images/icons/car_rent.svg';
 import { ReactComponent as SupportIcon } from '../../images/icons/headset.svg';
 import { ReactComponent as PriceIcon } from '../../images/icons/price.svg';
 import { ReactComponent as InsuranceIcon } from '../../images/icons/insurance.svg'
-import { AdvantagesItem, AdvantagesList, AdvantagesSection, AdvantagesText, Button, Description, ReasonSection, ReasonsItem, ReasonsList, ReasonsText, ReasonsTitle, ReasonsWrap, SectionHero, Title } from "./Home.styled";
+import { AdvantagesItem, AdvantagesList, AdvantagesSection, AdvantagesText, Button, Container, Description, ReasonSection, ReasonsItem, ReasonsList, ReasonsText, ReasonsTitle, ReasonsWrap, SectionHero, Title } from "./Home.styled";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -19,40 +19,46 @@ const Home = () => {
                 <title>Home</title>
             </Helmet>
             <SectionHero>
-                <Title>Where Your Journey Begins!</Title>
+                <Title>Where Your Journey Begins</Title>
                 <Description>You can easily make a request and rent a car in Ukraine – just choose car in catalog and contact us. Do not miss the unique chance to inexpensively rent a car of the class you need!</Description>
                 <Button onClick={handleStart}>Get started</Button>
             </SectionHero>
+
             <ReasonSection>
-                <ReasonsTitle>Reasons to rent a car with us</ReasonsTitle>
-                <ReasonsList>
-                    <ReasonsItem>
-                        <ReasonsWrap>
-                            <CarIcon width='76' height='76' />
-                            <ReasonsText>All cars in good condition</ReasonsText>
-                        </ReasonsWrap>
-                    </ReasonsItem>
-                    <ReasonsItem>
-                        <ReasonsWrap>
-                            <SupportIcon width='76' height='76' />
-                            <ReasonsText>Support on the road</ReasonsText>
-                        </ReasonsWrap>
-                    </ReasonsItem>
-                    <ReasonsItem>
-                        <ReasonsWrap>
-                            <PriceIcon width='76' height='76' />
-                            <ReasonsText>Affordable prices</ReasonsText>
-                        </ReasonsWrap>
-                    </ReasonsItem>
-                    <ReasonsItem>
-                        <ReasonsWrap>
-                            <InsuranceIcon width='76' height='76' />
-                            <ReasonsText>Full insurance</ReasonsText>
-                        </ReasonsWrap>
-                    </ReasonsItem>
-                </ReasonsList>
+                <Container>
+                    <ReasonsTitle>Reasons to rent a car with us</ReasonsTitle>
+                    <ReasonsList>
+                        <ReasonsItem>
+                            <ReasonsWrap>
+                                <CarIcon width='76' height='76' />
+                                <ReasonsText>All cars in good condition</ReasonsText>
+                            </ReasonsWrap>
+                        </ReasonsItem>
+                        <ReasonsItem>
+                            <ReasonsWrap>
+                                <SupportIcon width='76' height='76' />
+                                <ReasonsText>Support on the road</ReasonsText>
+                            </ReasonsWrap>
+                        </ReasonsItem>
+                        <ReasonsItem>
+                            <ReasonsWrap>
+                                <PriceIcon width='76' height='76' />
+                                <ReasonsText>Affordable prices</ReasonsText>
+                            </ReasonsWrap>
+                        </ReasonsItem>
+                        <ReasonsItem>
+                            <ReasonsWrap>
+                                <InsuranceIcon width='76' height='76' />
+                                <ReasonsText>Full insurance</ReasonsText>
+                            </ReasonsWrap>
+                        </ReasonsItem>
+                    </ReasonsList>
+                </Container>
+                
             </ReasonSection>
+
             <AdvantagesSection>
+                <Container>
                 <ReasonsTitle>Our advantages</ReasonsTitle>
                 <AdvantagesText>
                     In matters of cooperation with a client, we adhere the principles of partnership, which provides a lot of advantages. Concluding a car rental agreement with our company, you can be sure that:
@@ -71,6 +77,7 @@ const Home = () => {
                 <AdvantagesText>
                     Renting a car with us is advantageous, comfortable and safe. Try our services and just be sure of it!
                 </AdvantagesText>
+                </Container>
             </AdvantagesSection>
         </main>
     )

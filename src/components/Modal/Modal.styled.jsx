@@ -1,32 +1,45 @@
 import styled from '@emotion/styled';
 
+
 export const Overlay = styled.div`
     position: fixed;
     top: 0;
-    left: 0;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: var( --secondary-text-color);
     overflow: auto;
 `;
 
 export const ModalStyled = styled.div`
-    width: 541px;
-    border-radius: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 14px;
     background-color: var(--text-button-color);
-    padding: 40px;
-    position: relative;
+    width: calc(100% - 20px);
+    padding: 30px;
+
+    @media screen and (min-width: 480px) {
+        width: 450px;
+        padding: 32px;
+    }
+    
+    @media screen and (min-width: 768px) {
+        width: 541px;
+        padding: 34px;
+    }
 `;
 
 export const iconStyles = {
     position: 'absolute',
     stroke: 'transparent',
     fill: '#121417',
-    top: 16,
-    right: 16,
+    top: 12,
+    right: 12,
+    width: 22,
+    height: 22,
 };
 
 export const Image = styled.img`
@@ -86,7 +99,14 @@ export const DetailsItem = styled.li`
 export const Description = styled.p`
     line-height: 1.43;
     margin-top: 14px;
-    width: 461px;
+
+    @media screen and (min-width: 480px) {
+        width: 361px;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 461px;
+    }
 `;
 export const InfoTitle = styled.h3`
     font-weight: 400;
@@ -101,10 +121,13 @@ export const ConditionList = styled.ul`
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    width: 461px;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     letter-spacing: -0.24px;
+
+    @media screen and (min-width: 768px) {
+        width: 461px;
+    }
 `;
 
 export const ConditionItem = styled.li`

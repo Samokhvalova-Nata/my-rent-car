@@ -7,4 +7,5 @@ export const Container = styled.div`
     padding-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
+    outline: 2px solid tomato; 
 `;    
