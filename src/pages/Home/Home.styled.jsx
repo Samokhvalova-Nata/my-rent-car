@@ -33,7 +33,7 @@ export const SectionHero = styled.section`
     @media screen and (min-width: 1200px) {
         max-width: 1600px;
         height: 600px;
-        padding: 180px 180px;
+        padding: 180px 200px;
     }
 `;
 
